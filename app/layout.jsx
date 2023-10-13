@@ -1,5 +1,6 @@
 import "@styles/globals.css";
-import React from "react";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Ai Prompts",
@@ -11,7 +12,10 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body>
         <div className="main" />
-        <main className="app">{children}</main>
+        <main className="app">
+          <Nav />
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -57,19 +57,19 @@
 }
 
 .indigo_btn {
-  @apply rounded-full border border-[#6B7AFF] bg-[#6B7AFF] py-1.5 px-5 text-white transition-all hover:bg-[#5662CC] text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-md px-3 py-2 text-sm font-semibold text-neutral-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 border-[#6B7AFF] bg-[#6B7AFF]  transition-all hover:bg-[#5662CC] text-center flex items-center justify-center;
 }
 
 .outline_btn {
-  @apply rounded-full border border-[#6B7AFF] bg-transparent py-1.5 px-5 transition-all hover:bg-[#5662CC] text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-md border px-3 py-2 font-semibold text-neutral-100 shadow-sm border-[#6B7AFF] bg-transparent transition-all hover:bg-[#6B7AFF]  flex items-center justify-center text-sm;
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-4xl font-extrabold leading-[1.15] sm:text-5xl;
 }
 
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+.indigo_gradient {
+  @apply bg-gradient-to-br from-[#6b7aff] via-[#7197FC] to-[#80dff4] bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -81,7 +81,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg text-indigo-200 sm:text-xl max-w-2xl;
 }
 
 .search_input {
@@ -120,11 +120,11 @@
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-[#232640] min-w-[210px] flex flex-col gap-2 justify-start items-start;
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-inter text-neutral-100 hover:text-gray-300 font-medium;
 }
 
 /* PromptCard Component */
