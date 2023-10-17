@@ -5,17 +5,19 @@ import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  const { data: session } = useSession();
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [providers, setProviders] = useState(null);
 
   useEffect(() => {
-    const setProvider = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
       setProviders(response);
     };
-    setProvider();
+    setUpProviders();
   }, []);
+  console.log(providers);
+  console.log("Session : ", session);
   return (
     <nav className="flex-between w-full mb-16 pt-5">
       <Link href="/" className="flex gap-2 flex-center">
@@ -29,7 +31,7 @@ const Nav = () => {
       </Link>
       {/** Desktop Navigation */}
       <div className="sm:flex hidden">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="indigo_btn">
               Create Prompt
@@ -39,7 +41,7 @@ const Nav = () => {
             </button>
             <Link href="/profile">
               <Image
-                src="/assets/images/logo-no-text.svg"
+                src={session?.user.image}
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -56,7 +58,7 @@ const Nav = () => {
                     type="button"
                     key={provider.name}
                     onClick={() => signIn(provider.id)}
-                    className="indigo_btn"
+                    className="indigo_btn w-40"
                   >
                     Sign in
                   </button>
@@ -67,10 +69,10 @@ const Nav = () => {
       </div>
       {/** Mobile Navigation */}
       <div className="sm:hidden flex relative">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
               className="rounded-full"
