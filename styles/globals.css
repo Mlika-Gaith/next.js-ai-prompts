@@ -64,6 +64,14 @@
   @apply rounded-md px-3 py-2 font-semibold text-indigo-400 shadow-sm border-[#6B7AFF] bg-transparent ring-1 ring-inset ring-indigo-500 hover:bg-neutral-900/50;
 }
 
+.next-auth-provider-name-google {
+  @apply w-[90%] bg-white flex items-center justify-center rounded-lg my-2 text-sm  outline-0 px-3 py-2 font-semibold shadow-sm border-white ring-offset-white ring-white;
+}
+
+.oauth_text {
+  @apply mx-3 text-neutral-900 capitalize text-base;
+}
+
 .head_text {
   @apply mt-5 text-4xl font-extrabold leading-[1.15] sm:text-5xl;
 }
@@ -106,12 +114,26 @@
 }
 
 /* Form Component */
+.form_container {
+  @apply max-sm:w-full max-md:w-[80%] max-lg:w-[70%] w-[40%] h-full px-5 py-10 flex items-center justify-center flex-col;
+}
+.form_title {
+  @apply text-center font-satoshi font-bold text-3xl mb-4;
+}
 .form_textarea {
   @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full bg-neutral-900/50 flex rounded-lg my-2 text-sm text-neutral-100 outline-0 px-3 py-3 font-semibold shadow-sm border-[#6B7AFF]  ring-1 ring-inset ring-indigo-500;
+}
+
+.form_label {
+  @apply font-satoshi font-semibold text-base text-neutral-300 mt-8;
+}
+
+.form_btn {
+  @apply flex justify-center my-5 rounded-lg hover:bg-indigo-500 transition-all;
 }
 
 /* Nav Component */
