@@ -45,7 +45,7 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <Link href="/auth/signin" className="indigo_btn w-40">
+          <Link href="/auth/signin" className="indigo_btn">
             Sign in
           </Link>
         )}
@@ -92,7 +92,7 @@ const Nav = () => {
             )}
           </div>
         ) : (
-          <Link href="/auth/signin" className="indigo_btn w-40">
+          <Link href="/auth/signin" className="indigo_btn">
             Sign in
           </Link>
         )}

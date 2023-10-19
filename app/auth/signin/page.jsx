@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { signIn, getProviders, useSession } from "next-auth/react";
 import Image from "next/image";
 
-export default function SignIn() {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [providers, setProviders] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -91,4 +91,6 @@ export default function SignIn() {
         })}
     </div>
   );
-}
+};
+
+export default SignIn;

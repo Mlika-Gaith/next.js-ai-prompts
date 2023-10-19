@@ -53,11 +53,11 @@
 }
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply h-full relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
 .indigo_btn {
-  @apply rounded-md px-3 py-2 text-sm font-semibold text-neutral-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 border-[#6B7AFF] bg-[#6B7AFF]  transition-all hover:bg-[#5662CC] text-center flex items-center justify-center;
+  @apply rounded-md px-4 py-3 text-sm font-semibold text-neutral-100 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 border-[#6B7AFF] bg-[#6B7AFF]  transition-all hover:bg-[#5662CC] text-center flex items-center justify-center;
 }
 
 .outline_btn {
