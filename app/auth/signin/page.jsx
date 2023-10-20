@@ -30,8 +30,6 @@ const SignIn = () => {
     };
     setUpProviders();
   }, []);
-  console.log(providers);
-
   const onSubmit = async (data) => {
     const email = data.email;
     const result = await signIn("email", {
@@ -81,7 +79,7 @@ const SignIn = () => {
             ) : (
               <button
                 type="button"
-                key={provider.name}
+                key={provider.id}
                 onClick={() => signIn(provider.id)}
                 className="next-auth-provider-name-google"
               >
