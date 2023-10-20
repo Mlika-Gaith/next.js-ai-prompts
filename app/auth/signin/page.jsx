@@ -17,7 +17,7 @@ const SignIn = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isDirty, isTouched },
+    formState: { errors, isDirty },
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
@@ -30,17 +30,16 @@ const SignIn = () => {
     };
     setUpProviders();
   }, []);
+  console.log(providers);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    /*const result = await signIn("email", {
+    const email = data.email;
+    const result = await signIn("email", {
       email,
-    });*/
-
-    /*if (result.error) {
-      // Handle sign-in error (e.g., display error message).
+    });
+    if (result.error) {
       setErrorMessage(result.error);
-    }*/
+    }
   };
   if (providers != null) {
     return (
@@ -87,7 +86,11 @@ const SignIn = () => {
                 className="next-auth-provider-name-google"
               >
                 <Image
-                  src="/assets/images/google.svg"
+                  src={
+                    provider.id === "google"
+                      ? "/assets/images/google.svg"
+                      : "/assets/images/github.png"
+                  }
                   width={27}
                   height={27}
                   className="rounded-full"
