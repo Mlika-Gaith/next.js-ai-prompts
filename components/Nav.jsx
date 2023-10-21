@@ -5,9 +5,8 @@ import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 
 const Nav = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [toggleDropdown, setToggleDropdown] = useState(false);
-  console.log("STATUS :", status);
 
   return (
     <nav className="flex-between w-full mb-16 pt-5">

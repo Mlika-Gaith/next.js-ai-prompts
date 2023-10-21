@@ -50,3 +50,4 @@ const CreatePrompt = () => {
 };
 
 export default CreatePrompt;
+CreatePrompt.auth = true;
