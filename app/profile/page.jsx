@@ -4,10 +4,12 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import Profile from "@components/Profile";
+import Spinner from "@components/Spinner";
 
 const MyProfile = () => {
   const router = useRouter();
   const { data: session } = useSession();
+  const [isFetching, setIsFetching] = useState(true);
   const [myPosts, setMyPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -15,7 +17,10 @@ const MyProfile = () => {
       const data = await response.json();
       setMyPosts(data);
     };
-    if (session?.user.id) fetchPosts();
+    if (session?.user.id) {
+      fetchPosts();
+      setIsFetching(false);
+    }
   }, [session?.user.id]);
 
   const handleEdit = (post) => {
@@ -37,15 +42,17 @@ const MyProfile = () => {
       }
     }
   };
-  return (
-    <Profile
-      name={session?.user.username}
-      desc="Greetings! this is your profile, feel free to showcase your outstanding prompts and ignite the creative spark in others with the boundless potential of your imagination."
-      data={myPosts}
-      handleEdit={handleEdit}
-      handleDelete={handleDelete}
-    />
-  );
+  if (isFetching) return <Spinner />;
+  else
+    return (
+      <Profile
+        name="Your Profile"
+        desc="Greetings! this is your profile, feel free to showcase your outstanding prompts and ignite the creative spark in others with the boundless potential of your imagination."
+        data={myPosts}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+      />
+    );
 };
 
 export default MyProfile;

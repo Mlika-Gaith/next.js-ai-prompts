@@ -19,12 +19,12 @@ export const PATCH = async (request, { params }) => {
 
     const existsPrompt = await Prompt.findById(params.id);
     if (!existsPrompt)
-      return new Response("Prompt not with ${params.id} found.", {
+      return new Response("Prompt with ${params.id} not found.", {
         status: 404,
       });
     existsPrompt.prompt = prompt;
     existsPrompt.tag = tag;
-    await existingPrompt.save();
+    await existsPrompt.save();
     return new Response("Prompt with ${params.id} updated.", { status: 200 });
   } catch (error) {
     return new Response("Error updating prompt.", { status: 500 });
