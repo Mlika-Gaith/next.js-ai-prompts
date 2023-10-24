@@ -13,7 +13,7 @@ This is a web application built with Next.js that allows users to authenticate u
 To get started with this project, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/Mlika-Gaith/next.js-ai-prompts.git
 ```
 
 You need to set up environment variables for the application. Create a .env.local file in the project root directory and add the following variables:
