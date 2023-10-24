@@ -35,7 +35,6 @@ const Feed = ({ containerRef }) => {
   useEffect(() => {
     fetchPosts();
     setIsFetching(false);
-    console.log("THIS BITCH HAPPENED");
   }, []);
 
   useEffect(() => {
@@ -74,7 +73,6 @@ const Feed = ({ containerRef }) => {
 
     // Check if there are more posts to load
     if (startIndex < allPosts.length) {
-      console.log("Asss");
       // Calculate the actual number of posts to load
       const numPostsToLoad = Math.min(10, allPosts.length - startIndex);
 
