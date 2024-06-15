@@ -15,12 +15,10 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      allowDangerousEmailAccountLinking: true,
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      allowDangerousEmailAccountLinking: true,
     }),
     EmailProvider({
       server: process.env.EMAIL_SERVER,

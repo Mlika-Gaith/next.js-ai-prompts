@@ -38,17 +38,6 @@ export async function CustomSendVerificationRequest(params) {
       }
     );
   });
-  /*onst result = await transport.sendMail({
-    to: identifier,
-    from: provider.from,
-    subject: `Sign in to ${host}`,
-    text: text({ url, host }),
-    html: html({ url, host, theme }),
-  });
-  const failed = result.rejected.concat(result.pending).filter(Boolean);
-  if (failed.length) {
-    throw new Error(`Email(s) (${failed.join(", ")}) could not be sent`);
-  }*/
 }
 
 function html(params) {
